@@ -35,6 +35,7 @@ def play():
     # Set up music
     pygame.mixer.music.load('audio/background.mid')
     is_playing_music = False
+    game_over_sound = pygame.mixer.Sound('audio/gameover.wav')
 
     # Main game loop
     game_over = False
@@ -52,6 +53,8 @@ def play():
             if is_playing_music:
                 pygame.mixer.music.stop()
                 is_playing_music = False
+                if stats.ships_left == 0:
+                    game_over_sound.play()
 
         gf.update_screen(settings, screen, stats, sb, ship, aliens, bullets, play_button)
         main_clock.tick(FPS)

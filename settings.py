@@ -24,7 +24,7 @@ class Settings:
         self.fleet_direction = 1
 
         # Speed up scale
-        self.speedup_scale = 1.1
+        self.speedup_scale = 1.2
         self.drop_speed_scale = 2
 
         # Scoring
